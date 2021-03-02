@@ -4,5 +4,13 @@ import pandas as pd
 # pip install python-snappy
 # pip install pyarrow
 # pip install fastparquet
-df = pd.read_parquet('/Users/adamstreich/Desktop/2020-10-01_performance_fixed_tiles.parquet')
-df.to_csv('/Users/adamstreich/Desktop/CS506/CS506Spring2021Repository/mapc2/ookla-data/ookla2020Q4.csv')
+def fullFile():
+	df = pd.read_parquet('/Users/adamstreich/Desktop/2020-10-01_performance_fixed_tiles.parquet')
+	df.to_csv('/Users/adamstreich/Desktop/CS506/CS506Spring2021Repository/mapc2/ookla-data/ookla2020Q4.csv')
+
+def smallFile():
+	df = pd.read_parquet('/Users/adamstreich/Desktop/2020-10-01_performance_fixed_tiles.parquet')
+	newdf = df.head(20)
+	newdf.to_csv('/Users/adamstreich/Desktop/CS506/CS506Spring2021Repository/mapc2/ookla-data/SmallOOkla2020Q4.csv')
+
+smallFile()
